@@ -1,0 +1,74 @@
+@keyframes animated-background {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: -12800px 0; } }
+
+.page-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../images/full-image-scaled-1280x720.jpg");
+  background-repeat: repeat-x;
+  background-position: 0px 0px;
+  animation: animated-background 1000s linear infinite;
+  background-size: contain; }
+  .page-wrapper:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    pointer-events: none; }
+  .page-wrapper .page-content {
+    display: flex;
+    text-align: center;
+    justify-content: center; }
+    .page-wrapper .page-content .text-info {
+      z-index: 1;
+      position: absolute;
+      margin: 0;
+      bottom: 12.5%;
+      font-family: Roboto;
+      font-size: 10vh;
+      font-weight: 100;
+      color: #fff;
+      letter-spacing: 70px;
+      border: 1px solid white;
+      padding-left: 70px;
+      line-height: 12.5vh;
+      height: 12.3%;
+      outline: none; }
+    .page-wrapper .page-content img {
+      position: absolute;
+      bottom: 37.5%;
+      height: 50%;
+      z-index: 2; }
+    .page-wrapper .page-content .youtube-wrapper {
+      width: 63vh;
+      height: 50vh;
+      position: absolute;
+      z-index: 1;
+      bottom: 37.5%;
+      overflow: hidden;
+      margin-left: -20px;
+      opacity: .8; }
+      .page-wrapper .page-content .youtube-wrapper:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        pointer-events: none; }
+      .page-wrapper .page-content .youtube-wrapper:after {
+        left: 21px; }
+      .page-wrapper .page-content .youtube-wrapper .youtube {
+        width: 100%;
+        height: 100%;
+        margin-right: -41px; }
