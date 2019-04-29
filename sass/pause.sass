@@ -1,0 +1,77 @@
+=darken-overlay
+  &:after
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: rgba(#000, .7)
+    pointer-events: none
+
+@keyframes animated-background
+  from
+    background-position: 0 0
+  to
+    background-position: -12800px 0
+
+.page-wrapper
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background-image: url('../images/full-image-scaled-1280x720.jpg')
+  background-repeat: repeat-x
+  background-position: 0px 0px
+  animation: animated-background 1000s linear infinite
+  background-size: contain
+
+  +darken-overlay
+
+  .page-content
+    display: flex
+    text-align: center
+    justify-content: center
+
+    .text-info
+      z-index: 1
+      position: absolute
+      margin: 0
+      bottom: 12.5%
+      font-family: Roboto
+      font-size: 10vh
+      font-weight: 100
+      color: #fff
+      letter-spacing: 70px
+      border: 1px solid white
+      padding-left: 70px
+      line-height: 12.5vh
+      height: 12.3%
+      outline: none
+
+    img
+      position: absolute
+      bottom: 12.5% * 3
+      height: 12.5% * 4
+      z-index: 2
+
+    .youtube-wrapper
+      width: 63vh
+      height: 12.5vh * 4
+      position: absolute
+      z-index: 1
+      bottom: 12.5% * 3
+      overflow: hidden
+      margin-left: -20px
+      opacity: .8
+      +darken-overlay
+
+      &:after
+        left: 21px
+
+
+      .youtube
+        width: 100%
+        height: 100%
+        margin-right: -41px

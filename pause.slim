@@ -1,2 +1,19 @@
-html
+doctype html
+html lang='en'
+  head
+    meta charset='utf-8'
+    title Pause
+    meta name='description' content='Paused stream'
+    meta name='viewport' content='width=device-width, initial-scale=1'
+    meta name='theme-color' content='#fafafa'
+    link rel='stylesheet' href='css/normalize.css'
+    link rel='stylesheet' href='css/pause.css'
+    link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet"
   body
+    .page-wrapper
+      .page-content
+        img src='images/batman.png'
+        .youtube-wrapper
+          iframe.youtube frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+        h1.text-info contenteditable=true PAUSE
+    script src='js/pause.js'
