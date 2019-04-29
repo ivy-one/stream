@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var exec = require('gulp-exec');
+const babel = require('gulp-babel');
 
 sass.compiler = require('node-sass');
 
@@ -13,7 +14,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('sass:watch', function () {
-  gulp.watch('./sass/**/*.scss', gulp.series('sass'));
+  gulp.watch('./sass/**/*.sass', gulp.series('sass'));
 });
 
 gulp.task('slim', function(){
@@ -25,4 +26,16 @@ gulp.task('slim:watch', function () {
   gulp.watch('*.slim', gulp.series('slim'));
 });
 
-gulp.task('default', gulp.parallel(['sass:watch', 'slim:watch']));
+gulp.task('babel', () =>
+	gulp.src('./es/pause.js')
+		.pipe(babel({
+			presets: ['@babel/preset-env']
+		}))
+		.pipe(gulp.dest('./js'))
+);
+
+gulp.task('babel:watch', function () {
+  gulp.watch('./es/**/*.js', gulp.series('babel'));
+});
+
+gulp.task('default', gulp.parallel(['sass:watch', 'slim:watch', 'babel:watch']));
