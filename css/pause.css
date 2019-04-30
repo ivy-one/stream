@@ -1,8 +1,6 @@
 @keyframes animated-background {
-  from {
-    background-position: 0 0; }
   to {
-    background-position: -12800px 0; } }
+    background-position: -38400px 0; } }
 
 .page-wrapper {
   position: absolute;
@@ -10,11 +8,13 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("../images/full-image-scaled-1280x720.jpg");
+  background-image: url("../images/full-image-scaled-3840x720.jpg");
   background-repeat: repeat-x;
   background-position: 0px 0px;
-  animation: animated-background 1000s linear infinite;
-  background-size: contain; }
+  animation: animated-background 3000s linear infinite;
+  background-size: cover; }
+  .page-wrapper .background-image {
+    display: none; }
   .page-wrapper:after {
     content: '';
     position: absolute;
@@ -43,32 +43,24 @@
       line-height: 12.5vh;
       height: 12.3%;
       outline: none; }
-    .page-wrapper .page-content img {
+    .page-wrapper .page-content .center-image {
       position: absolute;
       bottom: 37.5%;
       height: 50%;
-      z-index: 2; }
+      z-index: 1; }
     .page-wrapper .page-content .youtube-wrapper {
       width: 63vh;
       height: 50vh;
       position: absolute;
-      z-index: 1;
       bottom: 37.5%;
       overflow: hidden;
-      margin-left: -20px;
       opacity: .8; }
-      .page-wrapper .page-content .youtube-wrapper:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.7);
-        pointer-events: none; }
+      .page-wrapper .page-content .youtube-wrapper.space-trip {
+        margin-left: -13px; }
+        .page-wrapper .page-content .youtube-wrapper.space-trip .youtube {
+          margin-right: -27px; }
       .page-wrapper .page-content .youtube-wrapper:after {
         left: 21px; }
       .page-wrapper .page-content .youtube-wrapper .youtube {
         width: 100%;
-        height: 100%;
-        margin-right: -41px; }
+        height: 100%; }

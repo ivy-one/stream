@@ -14,12 +14,20 @@ var textInfoSetup = function textInfoSetup(_) {
 };
 
 var embedVideo = function embedVideo(_) {
-  var startAt = Math.floor(Math.random() * Math.floor(30 * 60));
+  var startAt = Math.floor(Math.random() * 30 * 60);
   var url = "https://www.youtube.com/embed/wOMwO5T3yT4?version=3&autoplay=1&playlist=wOMwO5T3yT4&loop=1&start=" + startAt;
   document.querySelector('iframe.youtube').setAttribute('src', url);
+};
+
+var randomBackgroundPosition = function randomBackgroundPosition(_) {
+  var backgroundElement = document.querySelector('.page-wrapper');
+  var backgroundStyle = window.getComputedStyle(backgroundElement).backgroundImage;
+  var width = parseInt(backgroundStyle.match(/\d+/)[0]);
+  document.querySelector('.page-wrapper').style.backgroundPositionX = Math.floor(Math.random() * width) + 'px';
 };
 
 window.onload = function () {
   textInfoSetup();
   embedVideo();
+  randomBackgroundPosition();
 };
