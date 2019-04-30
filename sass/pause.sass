@@ -2,6 +2,12 @@
   to
     background-position: -38400px 0
 
+// @-webkit-keyframes animated-background-transform
+//    from
+//      -webkit-transform: translateX(0)
+//    to
+//      -webkit-transform: translateX(-66.66666666%)
+
 .page-wrapper
   position: absolute
   top: 0
@@ -13,6 +19,13 @@
   background-position: 0px 0px
   animation: animated-background 3000s linear infinite
   background-size: cover
+
+  // overflow: hidden
+
+  .background-image
+    display: none
+  //   height: 100%
+  //   animation: animated-background-transform 300s linear infinite
 
   &:after
     content: ''
@@ -45,7 +58,7 @@
       height: 12.3%
       outline: none
 
-    img
+    .center-image
       position: absolute
       bottom: 12.5% * 3
       height: 12.5% * 4
