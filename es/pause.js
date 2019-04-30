@@ -12,12 +12,21 @@ var textInfoSetup = _ => {
 }
 
 var embedVideo = _ => {
-  let startAt = Math.floor(Math.random() * Math.floor(30 * 60))
+  let startAt = Math.floor(Math.random() * 30 * 60)
   let url = "https://www.youtube.com/embed/wOMwO5T3yT4?version=3&autoplay=1&playlist=wOMwO5T3yT4&loop=1&start=" + startAt
   document.querySelector('iframe.youtube').setAttribute('src', url)
+}
+
+var randomBackgroundPosition = _ => {
+  let backgroundElement = document.querySelector('.page-wrapper')
+  let backgroundStyle = window.getComputedStyle(backgroundElement).backgroundImage
+  let width = parseInt(backgroundStyle.match(/\d+/)[0])
+
+  document.querySelector('.page-wrapper').style.backgroundPositionX = Math.floor(Math.random() * width) + 'px'
 }
 
 window.onload = function() {
   textInfoSetup()
   embedVideo()
+  randomBackgroundPosition()
 }
