@@ -1,6 +1,8 @@
-@keyframes animated-background {
+@keyframes animated-background-transform {
+  from {
+    transform: translateX(0); }
   to {
-    background-position: -38400px 0; } }
+    transform: translateX(-66.66667%); } }
 
 .page-wrapper {
   position: absolute;
@@ -8,13 +10,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("../images/full-image-scaled-3840x720.jpg");
-  background-repeat: repeat-x;
-  background-position: 0px 0px;
-  animation: animated-background 3000s linear infinite;
-  background-size: cover; }
-  .page-wrapper .background-image {
-    display: none; }
+  overflow: hidden; }
   .page-wrapper:after {
     content: '';
     position: absolute;
@@ -24,6 +20,12 @@
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.7);
     pointer-events: none; }
+  .page-wrapper .background-image {
+    background-image: url("../images/full-image-scaled-3840x720.jpg");
+    width: 3840px;
+    height: 100%;
+    animation: animated-background-transform 300s linear infinite;
+    background-size: contain; }
   .page-wrapper .page-content {
     display: flex;
     text-align: center;

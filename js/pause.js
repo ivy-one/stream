@@ -20,10 +20,10 @@ var embedVideo = function embedVideo(_) {
 };
 
 var randomBackgroundPosition = function randomBackgroundPosition(_) {
-  var backgroundElement = document.querySelector('.page-wrapper');
+  var backgroundElement = document.querySelector('.background-image');
   var backgroundStyle = window.getComputedStyle(backgroundElement).backgroundImage;
   var width = parseInt(backgroundStyle.match(/\d+/)[0]);
-  document.querySelector('.page-wrapper').style.backgroundPositionX = Math.floor(Math.random() * width) + 'px';
+  backgroundElement.style.backgroundPositionX = Math.floor(Math.random() * width) + 'px';
 };
 
 window.onload = function () {
