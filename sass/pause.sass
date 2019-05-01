@@ -1,12 +1,8 @@
-@keyframes animated-background
-  to
-    background-position: -38400px 0
-
-// @-webkit-keyframes animated-background-transform
-//    from
-//      -webkit-transform: translateX(0)
-//    to
-//      -webkit-transform: translateX(-66.66666666%)
+@keyframes animated-background-transform
+   from
+     transform: translateX(0)
+   to
+     transform: translateX(-66.66666666%)
 
 .page-wrapper
   position: absolute
@@ -14,18 +10,7 @@
   left: 0
   right: 0
   bottom: 0
-  background-image: url('../images/full-image-scaled-3840x720.jpg')
-  background-repeat: repeat-x
-  background-position: 0px 0px
-  animation: animated-background 3000s linear infinite
-  background-size: cover
-
-  // overflow: hidden
-
-  .background-image
-    display: none
-  //   height: 100%
-  //   animation: animated-background-transform 300s linear infinite
+  overflow: hidden
 
   &:after
     content: ''
@@ -36,6 +21,13 @@
     bottom: 0
     background-color: rgba(#000, .7)
     pointer-events: none
+
+  .background-image
+    background-image: url('../images/full-image-scaled-3840x720.jpg')
+    width: 3840px
+    height: 100%
+    animation: animated-background-transform 300s linear infinite
+    background-size: contain
 
   .page-content
     display: flex

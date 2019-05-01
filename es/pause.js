@@ -18,11 +18,11 @@ var embedVideo = _ => {
 }
 
 var randomBackgroundPosition = _ => {
-  let backgroundElement = document.querySelector('.page-wrapper')
+  let backgroundElement = document.querySelector('.background-image')
   let backgroundStyle = window.getComputedStyle(backgroundElement).backgroundImage
   let width = parseInt(backgroundStyle.match(/\d+/)[0])
 
-  document.querySelector('.page-wrapper').style.backgroundPositionX = Math.floor(Math.random() * width) + 'px'
+  backgroundElement.style.backgroundPositionX = Math.floor(Math.random() * width) + 'px'
 }
 
 window.onload = function() {
