@@ -8,26 +8,26 @@ const babel = require('gulp-babel');
 sass.compiler = require('node-sass');
 
 gulp.task('sass', function () {
-  return gulp.src('./sass/**/*.sass')
+  return gulp.src('src/sass/**/*.sass')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./css'));
 });
 
 gulp.task('sass:watch', function () {
-  gulp.watch('./sass/**/*.sass', gulp.series('sass'));
+  gulp.watch('src/sass/**/*.sass', gulp.series('sass'));
 });
 
 gulp.task('slim', function(){
-  return gulp.src('./*slim')
+  return gulp.src('src/*slim')
   .pipe(exec('slimrb -e --compile <%= file.path %> > <%= file.path.replace(".slim", "") %>.html'))
 });
 
 gulp.task('slim:watch', function () {
-  gulp.watch('*.slim', gulp.series('slim'));
+  gulp.watch('src/*.slim', gulp.series('slim'));
 });
 
 gulp.task('babel', () =>
-	gulp.src('./es/pause.js')
+	gulp.src('src/es/pause.js')
 		.pipe(babel({
 			presets: ['@babel/preset-env']
 		}))
@@ -35,7 +35,7 @@ gulp.task('babel', () =>
 );
 
 gulp.task('babel:watch', function () {
-  gulp.watch('./es/**/*.js', gulp.series('babel'));
+  gulp.watch('src/es/**/*.js', gulp.series('babel'));
 });
 
 gulp.task('default', gulp.parallel(['sass:watch', 'slim:watch', 'babel:watch']));
