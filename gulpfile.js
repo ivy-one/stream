@@ -19,7 +19,7 @@ gulp.task('sass:watch', function () {
 
 gulp.task('slim', function(){
   return gulp.src('src/*slim')
-  .pipe(exec('slimrb -e --compile <%= file.path %> > <%= file.path.replace(".slim", "") %>.html'))
+  .pipe(exec('slimrb -e --compile <%= file.path %> > <%= file.basename.replace(".slim", "") %>.html'))
 });
 
 gulp.task('slim:watch', function () {
