@@ -37,13 +37,13 @@
       bottom: 12.5%;
       font-family: Roboto;
       font-size: 10vh;
-      font-weight: 100;
+      font-weight: 300;
       color: #fff;
       letter-spacing: 70px;
-      border: 1px solid white;
+      border: 0.5vh solid white;
       padding-left: 70px;
-      line-height: 12.5vh;
-      height: 12.3%;
+      line-height: 11.5vh;
+      height: 11.5%;
       outline: none; }
     .page-wrapper .page-content .center-image {
       position: absolute;
