@@ -13,7 +13,7 @@ var textInfoSetup = _ => {
 
 var embedVideo = _ => {
   let startAt = Math.floor(Math.random() * 30 * 60)
-  let url = "https://www.youtube.com/embed/wOMwO5T3yT4?version=3&autoplay=1&playlist=wOMwO5T3yT4&loop=1&start=" + startAt
+  let url = "https://www.youtube.com/embed/wOMwO5T3yT4?version=3&autoplay=1&playlist=wOMwO5T3yT4&loop=1&mute=true&start=" + startAt
   document.querySelector('iframe.youtube').setAttribute('src', url)
 }
 
